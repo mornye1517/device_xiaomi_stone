@@ -122,6 +122,7 @@ camera.disable_zsl_mode=true
 
 # Display
 ro.surface_flinger.enable_frame_rate_override=false
+ro.surface_flinger.supports_background_blur=1
 ro.egl.blobcache.multifile=true
 ro.egl.blobcache.multifile_limit=33554432
 debug.sf.enable_egl_image_tracker=0
@@ -204,11 +205,7 @@ vendor.gralloc.secure_preview_only=1
 # HWUI
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-
-# HWUI
-debug.hwui.use_hint_manager=true
 debug.sf.enable_adpf_cpu_hint=true
-debug.hwui.target_cpu_time_percent=30
 
 # Incremental FS
 ro.incremental.enable=true
