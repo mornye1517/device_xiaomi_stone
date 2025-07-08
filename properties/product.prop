@@ -39,3 +39,6 @@ bluetooth.profile.vcp.controller.enabled=false
 
 # Phantom process monitoring
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
+
+# eBPF
+ro.bpf.kver_override=5.10.239
