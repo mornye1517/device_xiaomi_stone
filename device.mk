@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# Prebuilt HyperOS Overlay
+PRODUCT_PACKAGES += \
+    MiuiPermissionControllerOverlay
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
