@@ -77,6 +77,10 @@ media.aac_51_output_enabled=true
 vendor.mm.enable.qcom_parser=16777215
 persist.mm.enable.prefetch=true
 
+# HWUI
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
+
 #
 # system props for the data modules
 #
