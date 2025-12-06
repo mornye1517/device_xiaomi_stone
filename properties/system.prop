@@ -85,8 +85,15 @@ debug.hwui.skia_use_perfetto_track_events=false
 # system props for the data modules
 #
 ro.vendor.use_data_netmgrd=true
-
 persist.vendor.data.mode=concurrent
+
+# LMKD
+persist.device_config.lmkd_native.thrashing_limit=30
+persist.device_config.lmkd_native.thrashing_limit_decay=10
+persist.device_config.lmkd_native.thrashing_limit_critical=300
+persist.device_config.lmkd.enable_pressure_events=true
+persist.device_config.lmkd.kill_heaviest_task=true
+persist.device_config.per_app_mem.reclaim_enabled=true
 
 #system props for time-services
 persist.timed.enable=true
