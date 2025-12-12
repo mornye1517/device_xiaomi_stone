@@ -480,6 +480,12 @@ on property:sys.boot_completed=1
     chmod 0664 /dev/cpuctl/top-app/cpu.uclamp.min
     chmod 0664 /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive
 
+    # Battery Saving Tweak
+    write /proc/sys/kernel/perf_cpu_time_max_percent 5
+    write /proc/sys/vm/dirty_writeback_centisecs 3000
+    write /proc/sys/vm/dirty_ratio 30
+    write /proc/sys/vm/stat_interval 10
+
 # corefile limit
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
