@@ -486,6 +486,9 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_ratio 30
     write /proc/sys/vm/stat_interval 10
 
+    # Other Tweak
+    write /sys/block/sda/queue/nr_requests 256
+
 # corefile limit
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
