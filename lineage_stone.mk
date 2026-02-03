@@ -15,13 +15,28 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Boot animation
+# Include our stuff
+include packages/apps/GameBar/gamebar.mk
+include vendor/lineage-priv/keys/keys.mk
+
+# Stuff
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
-
 TARGET_EXCLUDES_AUDIOFX := true
-
-include vendor/priv-keys/keys/keys.mk
+TARGET_DISABLE_EPPE := true
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TORCH_STR_SUPPORTED := false
+AXION_CAMERA_REAR_INFO := 48,8,2
+AXION_CAMERA_FRONT_INFO := 13
+AXION_MAINTAINER := Rizky_Maulana
+AXION_PROCESSOR := Snapdragon_4_Gen_1
+TARGET_INCLUDES_LOS_PREBUILTS := true
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := walt
+PERF_ANIM_OVERRIDE := true
+TARGET_DISABLE_EPPE := true
+TARGET_PREBUILT_BCR := true
 
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := stone

@@ -295,7 +295,28 @@ on property:ro.vendor.display.svi=1 && property:sys.boot_completed=1
 on property:ro.boot.hwname=*
     setprop ro.boot.product.hardware.sku ${ro.boot.hwname}
 
+service battst /system/bin/sh -c "settings put system status_bar_show_battery_percent 1"
+    seclabel u:r:shell:s0
+    user root
+    oneshot
+    disabled  
+
+service gms1 /system/bin/sh -c "pm disable com.google.android.gms/com.google.android.gms.auth.managed.admin.DeviceAdminReceiver"
+    seclabel u:r:shell:s0
+    user root
+    oneshot
+    disabled
+    
+service gms3 /system/bin/sh -c "pm disable com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver"
+    seclabel u:r:shell:s0
+    user root
+    oneshot
+    disabled
+
 # Restrict access on this node
 on property:sys.boot_completed=1
+    start battst
+    start gms1
+    start gms3
     # Only owner can acces this node
     chmod 440 /proc/net/unix
